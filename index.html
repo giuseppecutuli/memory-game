@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Game</title>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <h1 class="title">Memory game</h1>
+        <div class="heading">
+          <div class="actions">
+            <button type="button" class="btn" id="start-game">Start</button>
+            <button type="button" class="btn" id="reset-game" disabled>Reset</button>
+          </div>
+          <div class="info">
+            <p><span id="moves">0</span>&nbsp;moves</p>
+            <p>time:&nbsp;<span id="time">0</span>sec</p>
+          </div>
+        </div>
+        <div class="board" id="board">
+          <div class="game" id="game"></div>
+          <div class="win">
+            <p>You won!</p>
+            <p>with&nbsp;<span id="totalMoves"></span>&nbsp;moves</p>
+            <p>under&nbsp;<span id="totalTime"></span>&nbsp;seconds</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <template id="box">
+      <button type="button" class="box">
+        <span class="empty"></span>
+        <span class="emoji"></span>
+      </button>
+    </template>
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

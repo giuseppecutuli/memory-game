@@ -1,0 +1,155 @@
+@font-face {
+  font-family: Fredoka;
+  src: url("../fonts/FredokaOne-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+button {
+  box-shadow: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  color: black;
+}
+
+:root {
+  font-family: Fredoka;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: black;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+.container {
+  max-width: 1440px;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 48px;
+}
+
+.heading {
+  margin: 32px 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn {
+  background-color: #282A3A;
+
+  color: white;
+
+  font-family: Fredoka;
+  font-size: 16px;
+  padding: 12px 16px;
+  border-radius: 3px;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+}
+
+.btn.btn--hide {
+  display: none;
+}
+
+.board {
+  perspective: 1000px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.board.board--win {
+  transform: rotateY(180deg);
+}
+
+.game {
+  border-radius: 5px;
+  padding: 16px;
+  box-shadow: 0 25px 50px rgb(33 33 33 / 25%);
+  background: linear-gradient(135deg,  #6f00fc 0%,#fc7900 50%,#fcc700 100%);
+  perspective: 1000px;
+
+  display: grid;
+  grid-gap: 20px;
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.win {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: white;
+  transform: rotateY(180deg);
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.box {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.game.game--visible .box {
+  transform: rotateY(180deg);
+}
+
+.box.box--visible {
+  transform: rotateY(180deg);
+}
+
+.box > span {
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.box .emoji {
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  transform: rotateY(180deg);
+}
